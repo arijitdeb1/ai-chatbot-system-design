@@ -342,7 +342,7 @@ const P={
  ragslow:{c:"scale",t:"Retrieval slows down every reply",
   scn:"Embedding the question, searching and reranking add 1.5 seconds before the LLM even starts, so the first word appears late.",
   brk:["Embedding, search and rerank run one after another in the request path","Reranking too many candidates","Every repeated question searches again"],
-  how:["Skip retrieval for greetings and small talk with [[intent|intent routing]]","Cache embeddings and results for repeated questions with a [[semcache|semantic cache]]","Rerank only the top 20 to 50, and run keyword and vector search in parallel","Keep the vector index in memory close to the orchestrator, e.g. Amazon OpenSearch Service or Redis"],
+  how:["Skip retrieval for greetings and small talk with [[intent|intent routing]]","Or expose retrieval as a tool (agentic RAG) so the LLM searches only when it needs documents; force it for policy questions so the model doesn't answer from memory","Cache embeddings and results for repeated questions with a [[semcache|semantic cache]]","Rerank only the top 20 to 50, and run keyword and vector search in parallel","Keep the vector index in memory close to the orchestrator, e.g. Amazon OpenSearch Service or Redis"],
   con:["semcache","ttft"]},
  stale:{c:"scale",t:"The knowledge base answers from outdated documents",
   scn:"The refund policy changed on Monday. On Thursday the bot still quotes the old policy, because the index is rebuilt only once a month.",
